@@ -1,3 +1,10 @@
+/**
+ * TODO:
+ * Replace test data with prisma data
+ * Customize CourseNetwork
+ * Add onClick feature
+ */
+
 import { PrismaClient } from '@prisma/client'
 import dynamic from "next/dynamic";
 import json from '../public/test-data.json'
