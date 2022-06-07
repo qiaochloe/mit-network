@@ -1,0 +1,184 @@
+{
+  "nodes": [
+    {
+      "course_title": "Introduction to Computer Science Programming in Python",
+      "course_code": "6.0001"
+    },
+    {
+      "course_title": "Introduction to Computational Thinking and Data Science",
+      "course_code": "6.0002"
+    },
+    {
+      "course_title": "Circuits and Electronics",
+      "course_code": "6.002"
+    },
+    {
+      "course_title": "Signal Processing",
+      "course_code": "6.003"
+    },
+    {
+      "course_title": "Computation Structures",
+      "course_code": "6.004"
+    },
+    {
+      "course_title": "Introduction to Algorithms",
+      "course_code": "6.006"
+    },
+    {
+      "course_title": "Introduction to Inference",
+      "course_code": "6.008"
+    },
+    {
+      "course_title": "Fundamentals of Programming",
+      "course_code": "6.009"
+    },
+    {
+      "course_title": "Introduction to EECS via Robotics",
+      "course_code": "6.01"
+    },
+    {
+      "course_title": "Signals, Systems and Inference",
+      "course_code": "6.011"
+    },
+    {
+      "course_title": "Nanoelectronics and Computing Systems",
+      "course_code": "6.012"
+    },
+    {
+      "course_title": "Electromagnetics Waves and Applications",
+      "course_code": "6.013"
+    },
+    {
+      "course_title": "Electromagnetic Fields, Forces and Motion",
+      "course_code": "6.014"
+    },
+    {
+      "course_title": "Introduction to EECS via Communication Networks",
+      "course_code": "6.02"
+    },
+    {
+      "course_title": "Cellular Neurophysiology and Computing",
+      "course_code": "6.021[J]"
+    },
+    {
+      "course_title": "Quantitative and Clinical Physiology",
+      "course_code": "6.022[J]"
+    },
+    {
+      "course_title": "Fields, Forces and Flows in Biological Systems",
+      "course_code": "6.023[J]"
+    },
+    {
+      "course_title": "Molecular, Cellular, and Tissue Biomechanics",
+      "course_code": "6.024[J]"
+    },
+    {
+      "course_title": "Medical Device Design",
+      "course_code": "6.025[J]"
+    },
+    {
+      "course_title": "Biomedical Signal and Image Processing (New)",
+      "course_code": "6.026[J]"
+    },
+    {
+      "course_title": "Biomolecular Feedback Systems",
+      "course_code": "6.027[J]"
+    },
+    {
+      "course_title": "Introduction to EECS via Medical Technology",
+      "course_code": "6.03"
+    },
+    {
+      "course_title": "Elements of Software Construction",
+      "course_code": "6.031"
+    },
+    { "course_title": "Computer Systems Engineering", "course_code": "6.033" },
+    { "course_title": "Artificial Intelligence", "course_code": "6.034" },
+    { "course_title": "Computer Language Engineering", "course_code": "6.035" },
+    {
+      "course_title": "Introduction to Machine Learning",
+      "course_code": "6.036"
+    },
+    {
+      "course_title": "Structure and Interpretation of Computer Programs",
+      "course_code": "6.037"
+    },
+    { "course_title": "Introduction to Probability", "course_code": "6.041" },
+    {
+      "course_title": "Mathematics for Computer Science",
+      "course_code": "6.042[J]"
+    },
+    {
+      "course_title": "Computability and Complexity Theory",
+      "course_code": "6.045[J]"
+    },
+    {
+      "course_title": "Design and Analysis of Algorithms",
+      "course_code": "6.046[J]"
+    },
+    {
+      "course_title": "Computational Biology: Genomes, Networks, Evolution",
+      "course_code": "6.047"
+    },
+    {
+      "course_title": "Evolutionary Biology: Concepts, Models and Computation",
+      "course_code": "6.049[J]"
+    },
+    {
+      "course_title": "Information, Entropy, and Computation",
+      "course_code": "6.050[J]"
+    },
+    { "course_title": "Introduction to MATLAB", "course_code": "6.057" },
+    {
+      "course_title": "Introduction to Signals and Systems, and Feedback Control",
+      "course_code": "6.058"
+    },
+    {
+      "course_title": "Introduction to Electric Power Systems",
+      "course_code": "6.061"
+    },
+    {
+      "course_title": "Electronics Project Laboratory",
+      "course_code": "6.070[J]"
+    },
+    { "course_title": "Creating Video Games", "course_code": "6.073[J]" },
+    {
+      "course_title": "Introduction to EECS via Interconnected Embedded Systems",
+      "course_code": "6.08"
+    }
+  ],
+
+  "links": [
+    { "source": "6.0002", "target": "6.0001" },
+    { "source": "6.003", "target": "6.0001" },
+    { "source": "6.004", "target": "6.0001" },
+    { "source": "6.006", "target": "6.0001" },
+    { "source": "6.009", "target": "6.0001" },
+    { "source": "6.01", "target": "6.0001" },
+    { "source": "6.02", "target": "6.0001" },
+    { "source": "6.034", "target": "6.0001" },
+    { "source": "6.036", "target": "6.0001" },
+    { "source": "6.049[J]", "target": "6.0001" },
+    { "source": "6.08", "target": "6.0001" },
+    { "source": "6.012", "target": "6.002" },
+    { "source": "6.021[J]", "target": "6.002" },
+    { "source": "6.061", "target": "6.002" },
+    { "source": "6.011", "target": "6.003" },
+    { "source": "6.021[J]", "target": "6.003" },
+    { "source": "6.026[J]", "target": "6.003" },
+    { "source": "6.033", "target": "6.004" },
+    { "source": "6.035", "target": "6.004" },
+    { "source": "6.045[J]", "target": "6.006" },
+    { "source": "6.046[J]", "target": "6.006" },
+    { "source": "6.047", "target": "6.006" },
+    { "source": "6.011", "target": "6.008" },
+    { "source": "6.006", "target": "6.009" },
+    { "source": "6.031", "target": "6.009" },
+    { "source": "6.033", "target": "6.009" },
+    { "source": "6.036", "target": "6.01" },
+    { "source": "6.073[J]", "target": "6.01" },
+    { "source": "6.061", "target": "6.013" },
+    { "source": "6.035", "target": "6.031" },
+    { "source": "6.011", "target": "6.041" }
+  ]
+}
