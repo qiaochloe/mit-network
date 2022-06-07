@@ -1,3 +1,8 @@
+# TODO: handle prerequisites better
+# clusters like Calculus II (GIR) 18.02|18.02A|18.022|18.024
+# AND and OR statements like Physics II (GIR), 16.001, and (18.03 or 18.032)
+# coreqs and prereqs
+
 import requests
 from bs4 import BeautifulSoup as bs
 import csv
