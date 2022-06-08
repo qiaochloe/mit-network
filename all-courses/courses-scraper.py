@@ -85,5 +85,5 @@ for url in urls:
 #courses_df.to_csv(file_name, encoding='utf-8')
 #prereqs_df.to_csv(file_name, encoding='utf-8')
 
-courses_df.to_json('all-courses/courses.json', orient='records')
-prereqs_df.to_json('all-courses/prereqs.json', orient='records')
+courses_df.to_json('all-courses/nodes.json', orient='records')
+prereqs_df.to_json('all-courses/links.json', orient='records')
