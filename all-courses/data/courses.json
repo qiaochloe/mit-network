@@ -1,5 +1,41 @@
 [
   {
+    "course_title": "Calculus I (GIR)",
+    "course_code": "18.01|18.01A|18.014",
+    "same_subjects": [],
+    "course_desc": ""
+  },
+  {
+    "course_title": "Calculus II (GIR)",
+    "course_code": "18.02|18.02A|18.022|18.024",
+    "same_subjects": [],
+    "course_desc": ""
+  },
+  {
+    "course_title": "Physics I (GIR)",
+    "course_code": "8.01|8.01L|8.011|8.012",
+    "same_subjects": [],
+    "course_desc": ""
+  },
+  {
+    "course_title": "Physics II (GIR)",
+    "course_code": "8.02|8.021|8.022",
+    "same_subjects": [],
+    "course_desc": ""
+  },
+  {
+    "course_title": "Chemistry (GIR)",
+    "course_code": "3.091|5.111|5.112",
+    "same_subjects": [],
+    "course_desc": "Presents engineering problems in a computational setting with emphasis on data science and problem abstraction.\u00a0Covers exploratory data analysis and visualization, filtering, regression. Building basic machine learning models (classifiers, decision trees, clustering) for smart city applications. Labs and programming projects focused on analytics problems faced by cities, infrastructure, and environment. Students taking graduate version complete additional assignments and project work. "
+  },
+  {
+    "course_title": "Biology (GIR)",
+    "course_code": "7.012|7.013|7.014|7.015|7.016",
+    "same_subjects": [],
+    "course_desc": "Presents engineering problems in a computational setting with emphasis on data science and problem abstraction.\u00a0Covers exploratory data analysis and visualization, filtering, regression. Building basic machine learning models (classifiers, decision trees, clustering) for smart city applications. Labs and programming projects focused on analytics problems faced by cities, infrastructure, and environment. Students taking graduate version complete additional assignments and project work. "
+  },
+  {
     "course_title": "Engineering Computation and Data Science",
     "course_code": "1.00",
     "same_subjects": [],
