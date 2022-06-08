@@ -71,7 +71,7 @@ for url in urls:
                     same_subjects = line.strip("Same subject as").split(', ')
         
         # DESCRIPTION
-        course_desc = element.find(class_="courseblockdesc").text
+        course_desc = element.find(class_="courseblockdesc").text.strip(" ")
         
         course_row = [course_title, course_code,same_subjects, course_desc]
         courses_df.loc[len(courses_df)] = course_row
