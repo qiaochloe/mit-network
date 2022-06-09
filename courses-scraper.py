@@ -22,16 +22,6 @@ for subject in notinpdf.find_all("a"):
     url = subject["href"]
     urls.append(f"http://catalog.mit.edu{url}")
     
-# Create csv and set header
-#courses_csv = open('courses.csv', 'w', newline='')
-#courses_writer = csv.writer(courses_csv)
-
-#prereqs_csv = open('prereqs.csv', 'w', newline='')
-#prereqs_writer = csv.writer(prereqs_csv)
-
-#header = ['course_title', 'course_code', 'prereq_courses', 'same_subjects', 'course_desc']
-#writer.writerow(header)
-
 courses_df = pd.DataFrame(columns=['course_title', 'course_code', 'same_subjects', 'course_desc'])
 prereqs_df = pd.DataFrame(columns=['course', 'prereq'])
 
@@ -81,11 +71,6 @@ for url in urls:
         for prereq in prereq_courses: 
             prereq_row = [course_code, prereq]
             prereqs_df.loc[len(prereqs_df)] = prereq_row
-            
-        #writer.writerow(row)
-
-#courses_df.to_csv(file_name, encoding='utf-8')
-#prereqs_df.to_csv(file_name, encoding='utf-8')
 
 courses_df.to_json('all-courses/nodes.json', orient='records')
 prereqs_df.to_json('all-courses/links.json', orient='records')
