@@ -22,8 +22,8 @@ for subject in notinpdf.find_all("a"):
     url = subject["href"]
     urls.append(f"http://catalog.mit.edu{url}")
     
-courses_df = pd.DataFrame(columns=['course_title', 'course_code', 'same_subjects', 'course_desc'])
-prereqs_df = pd.DataFrame(columns=['course', 'prereq'])
+courses_df = pd.DataFrame(columns=['course_title', 'course_code', 'prereq_desc', 'same_subjects', 'course_desc'])
+prereqs_df = pd.DataFrame(columns=['course_code', 'prereq_code'])
 
 for url in urls:
     request = requests.get(url)
@@ -42,14 +42,14 @@ for url in urls:
         
         prereq_desc = ""
         try: 
-            prereq_desc = prereq_block.text 
+            prereq_desc = prereq_block.text.strip(" ")
         except AttributeError:
-            prereq_desc = "None"
+            pass
             
         prereq_courses = []
         try: 
-            for prereq_course in prereq_block.find_all("a"):
-                prereq_courses.append(prereq_course["href"].strip('/search/?P='))
+            for prereq_code in prereq_block.find_all("a"):
+                prereq_courses.append(prereq_code["href"].strip('/search/?P='))
         except AttributeError:
             pass
         
@@ -65,12 +65,12 @@ for url in urls:
         # DESCRIPTION
         course_desc = element.find(class_="courseblockdesc").text.strip(" ")
         
-        course_row = [course_title, course_code,same_subjects, course_desc]
+        course_row = [course_title, course_code, prereq_desc, same_subjects, course_desc]
         courses_df.loc[len(courses_df)] = course_row
         
-        for prereq in prereq_courses: 
-            prereq_row = [course_code, prereq]
+        for prereq_code in prereq_courses: 
+            prereq_row = [course_code, prereq_code]
             prereqs_df.loc[len(prereqs_df)] = prereq_row
 
-courses_df.to_json('all-courses/nodes.json', orient='records')
-prereqs_df.to_json('all-courses/links.json', orient='records')
+courses_df.to_json('./data/nodes.json', orient='records')
+prereqs_df.to_json('./data/links.json', orient='records')
