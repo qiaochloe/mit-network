@@ -1,52 +1,102 @@
 import json
 
-def name_json_lists(json_file, list_name):
-    
-    output = {}
+def get_json_obj(json_file):
+    """
+        Args:
+            json_file (str): path to json file 
+        
+        Returns: 
+            list or dict: json object expressed as python obj
+    """
     
     with open(json_file, 'r') as file: 
-        file_data = json.load(file)
-        output[f"{list_name}"] = file_data
-        
-    with open(json_file, 'w+') as file:
-        json.dump(output, file, indent=2)
-    
+        json_oject = json.load(file)
+        return json_oject
 
-def add_json(file_one_name, file_two_name, output_file_name=None):
+def name_json_array(json_obj, array_name):
     """
+    Takes an unnamed array of json objects and returns a dictionary.
+    
+    Ex: 
+    >>> data = [{ "id": 1, "course": "biology"}, {"id": 2, "course": "chemistry"}]
+    >>> print(name_json_array(data, "courses"))
+    { "courses" : [{ "id": 1, "course": "biology"}, {"id": 2, "course": "chemistry"}] }
+    
+    Args: 
+        json_obj (list): unnamed array of json objects
+        array_name (str): key to the json array in the dict
+        
+    Returns:
+        dict: dictionary with one key-value pair 
+    """
+    
+    output = {}
+    output[f"{array_name}"] = json_obj
+
+    return output
+
+def combine_json_obj(og_obj, add_obj, attr=None):
+    """
+    Appends array of json obj to another array of json obj.
+    
     Args:
-        file_one_name (str): path to json file with data
-        file_two_name (str): path to json file with data
-        output_file_name (str): path to json file to be overwritten; equal to file_one_name by default
+        og_obj (list or dict): original json obj
+        add_obj (list or dict): additional json obj to be combined
+        attr (str): attribute in og_obj dictionary to append add_obj array to
         
     Returns: 
-        dict: combined json data of the two files
-        
+        list or dict: 
+            array of combined json obj when both args are lists
+            dict of combined json in all other cases
     """
     
-    output_dict = {}
-    with open(file_one_name, 'r') as file_one, open(file_two_name, 'r') as file_two: 
-        #file_one_data = []
+    if type(add_obj) is list:
+        if type(og_obj) is list:
+            return [*og_obj, *add_obj]
         
-        #for json_obj in file_one:
-        #    data = json.loads(json_obj) # load into dict
-        #    file_one_data.append(data)
+        elif type(og_obj) is dict and attr is not None:
+            for json_obj in add_obj:
+                og_obj[attr].append(json_obj)
+            return og_obj
         
-        #file_two_data = []
-        
-        #for json_obj in file_two:
-        #    data = json.loads(json_obj) # load into dict
-        #    file_two_data.append(data)
-        
-        file_one_data = json.load(file_one)
-        file_two_data = json.load(file_two)
-                
-        output = file_two_data + file_one_data 
-                
-    if output_file_name is None: 
-        output_file_name = file_one_name
-        
-    with open(output_file_name, 'r+') as output_file:
-        json.dump(output, output_file, indent=2) # convert back to json
+        else: # append objects to first key-value in dict 
+            first_key = list(og_obj.keys())[0]
+            for json_obj in add_obj:
+                og_obj[first_key].append(json_obj)
+            return og_obj
+    
+    elif type(og_obj) is dict and type(add_obj) is dict:
+        return og_obj | add_obj
+    
+    else:
+        raise TypeError("Wrong combination of types for arguments.") 
 
-add_json("./data/nodes.json", "./data/gir-nodes.json")
+def create_json_file(json_obj, file_name):
+    
+    with open(file_name, 'w+') as file:
+        json.dump(json_obj, file, indent=2)
+    
+def main(output):
+    nodes_file = "./data/nodes.json"
+    gir_nodes_file = "./data/gir-nodes.json"
+    links_file = "./data/links.json"    
+    
+    data = combine_json_obj(
+        name_json_array(
+            combine_json_obj(
+                get_json_obj(nodes_file), 
+                get_json_obj(gir_nodes_file)
+                ), 
+                "nodes"
+            ),
+        name_json_array(
+            get_json_obj(links_file), 
+            "links"
+        )
+    )
+    
+    create_json_file(data, output)
+    
+main("./data/new.json")
+
+#add_json("./data/nodes.json", "./data/gir-nodes.json")
