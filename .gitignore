@@ -1,5 +1,7 @@
 *.DS_store
+
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 *.ipynb
-eecs/
+
+/test-scraps
