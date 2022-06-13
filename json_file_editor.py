@@ -78,7 +78,7 @@ def create_json_file(json_obj, file_name):
     
 def main(output):
     nodes_file = "./data/nodes.json"
-    gir_nodes_file = "./data/gir-nodes.json"
+    gir_nodes_file = "./data/gir_nodes.json"
     links_file = "./data/links.json"    
     
     data = combine_json_obj(
@@ -99,4 +99,4 @@ def main(output):
     
 main("./data/new.json")
 
-#add_json("./data/nodes.json", "./data/gir-nodes.json")
+#add_json("./data/nodes.json", "./data/gir_nodes.json")
