@@ -5,3 +5,5 @@
 *.ipynb
 
 /test_scraps
+
+*/node_modules

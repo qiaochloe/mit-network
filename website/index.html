@@ -1,29 +1,12 @@
-<head>
-  <style>
-    body { margin: 0; }
-  </style>
-
-  <script src="//unpkg.com/force-graph"></script>
-  <!--<script src="../../dist/force-graph.js"></script>-->
-</head>
-
-<body>
-  <div id="graph"></div>
-
-  <script>
-    fetch("./data/data.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const Graph = ForceGraph()(document.getElementById("graph"))
-          .nodeId("course_code")
-          .nodeRelSize(6)
-          .nodeLabel(data => data.course_code + " " + data.course_title)
-          // .nodeAutoColorBy("group")
-          // .nodeVal("val") 
-          .linkSource("course")
-          .linkTarget("prereq")
-          // .linkDirectionalArrowLength(6);
-          .graphData(data)
-      });
-  </script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIT Network</title>
+    <script type="module" src="network.js"></script>
+  </head>
+  <body>
+    <div id="graph"></div>
+  </body>
+</html>
