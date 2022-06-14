@@ -72,5 +72,5 @@ for url in urls:
             prereq_row = [course_code, prereq_code]
             prereqs_df.loc[len(prereqs_df)] = prereq_row
 
-courses_df.to_json('./data/nodes.json', orient='records')
-prereqs_df.to_json('./data/links.json', orient='records')
+courses_df.to_json('./website/data/nodes.json', orient='records')
+prereqs_df.to_json('./website/data/links.json', orient='records')

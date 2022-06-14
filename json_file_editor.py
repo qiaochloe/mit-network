@@ -77,9 +77,9 @@ def create_json_file(json_obj, file_name):
         json.dump(json_obj, file, indent=2)
     
 def main(output):
-    nodes_file = "./data/nodes.json"
-    gir_nodes_file = "./data/gir_nodes.json"
-    links_file = "./data/links.json"    
+    nodes_file = "./website/data/nodes.json"
+    gir_nodes_file = "./website/data/gir_nodes.json"
+    links_file = "./website/data/links.json"    
     
     data = combine_json_obj(
         name_json_array(
@@ -97,6 +97,6 @@ def main(output):
     
     create_json_file(data, output)
     
-main("./data/new.json")
+main("./website/data/new.json")
 
-#add_json("./data/nodes.json", "./data/gir_nodes.json")
+#add_json("./website/data/nodes.json", "./data/gir_nodes.json")
