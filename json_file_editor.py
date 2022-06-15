@@ -82,6 +82,11 @@ def create_json_file(json_obj, file_name):
 
 
 def main():
+    """
+    Combines nodes.json and gir_nodes.json and creates all_nodes.json
+    Combines nodes.json, gir_nodes.json, and links.json and creates data.json
+    """
+    
     nodes_file = "./website/data/nodes.json"
     gir_nodes_file = "./website/data/gir_nodes.json"
     links_file = "./website/data/links.json"

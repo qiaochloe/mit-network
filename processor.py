@@ -1,3 +1,7 @@
+# TODO: 
+# process prerequisites (AND, OR); 
+# check if corerequisites were scraped (MYSQL)
+
 import requests
 from bs4 import BeautifulSoup as bs
 import pandas as pd
@@ -5,6 +9,12 @@ from department_names import department_names
 
 
 def scrape_courses():
+    """
+    Returns: 
+        courses_df (pd.DataFrame): df of all courses
+        prereqs_df (pd.DataFrame): df of each course-prereq link
+    """
+    
     # Get urls for each subject
     urls = []
 
@@ -94,6 +104,12 @@ def scrape_courses():
 
 
 def add_department_attribute():
+    """
+    Returns: 
+        courses_df (pd.DataFrame): df of all courses with department attributes
+        departments_df (pd.DataFrame): df of department codes (used in courses codes) and department name
+    """
+    
     def get_department_code(course_code):
         return course_code.split(".")[0]
 
