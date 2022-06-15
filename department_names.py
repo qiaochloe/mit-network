@@ -1,7 +1,3 @@
-import pandas as pd
-
-courses_df = pd.read_json("./website/data/nodes.json")
-
 department_names = [
     "Civil and Environmental Engineering",
     "Mechanical Engineering",
@@ -49,30 +45,3 @@ department_names = [
     "Science, Technology, and Society",
     "Women's and Gender Studies",
 ]
-
-
-def get_department_code(course_code):
-    return course_code.split(".")[0]
-
-
-department_codes = courses_df["course_code"].apply(get_department_code).unique()
-department_dict = dict(zip(department_codes, department_names))
-
-
-def get_department(course_code):
-    department_code = get_department_code(course_code)
-    department = department_dict[department_code]
-    return department
-
-
-# Add department attribute to courses_df
-department = courses_df["course_code"].apply(get_department)
-department = department.rename("course_department")
-courses_df = courses_df.merge(department, left_index=True, right_index=True)
-courses_df.to_json("./website/data/nodes.json", orient="records")
-
-# Create department.json
-departments_df = pd.DataFrame(
-    {"department_code": department_codes, "department_name": department_names}
-)
-departments_df.to_json("./website/data/departments.json", orient="records")
