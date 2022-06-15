@@ -1,0 +1,80 @@
+[
+  {
+    "department_code": "1",
+    "department_name": "Civil and Environmental Engineering"
+  },
+  { "department_code": "2", "department_name": "Mechanical Engineering" },
+  {
+    "department_code": "3",
+    "department_name": "Materials Science and Engineering"
+  },
+  { "department_code": "4", "department_name": "Architecture" },
+  { "department_code": "5", "department_name": "Chemistry" },
+  {
+    "department_code": "6",
+    "department_name": "Electrical Engineering and Computer Science"
+  },
+  { "department_code": "7", "department_name": "Biology" },
+  { "department_code": "8", "department_name": "Physics" },
+  { "department_code": "9", "department_name": "Brain and Cognitive Sciences" },
+  { "department_code": "10", "department_name": "Chemical Engineering" },
+  { "department_code": "11", "department_name": "Urban Studies and Planning" },
+  {
+    "department_code": "12",
+    "department_name": "Earth, Atmospheric, and Planetary Sciences"
+  },
+  { "department_code": "14", "department_name": "Economics" },
+  { "department_code": "15", "department_name": "Management" },
+  {
+    "department_code": "16",
+    "department_name": "Aeronautics and Astronautics"
+  },
+  { "department_code": "17", "department_name": "Political Science" },
+  { "department_code": "18", "department_name": "Mathematics" },
+  { "department_code": "20", "department_name": "Biological Engineering" },
+  { "department_code": "21", "department_name": "Humanities" },
+  { "department_code": "21A", "department_name": "Anthropology" },
+  { "department_code": "21H", "department_name": "History" },
+  { "department_code": "21G", "department_name": "Global Lanugages" },
+  { "department_code": "21L", "department_name": "Literature" },
+  { "department_code": "21M", "department_name": "Music and Theater Arts" },
+  { "department_code": "21W", "department_name": "Writing" },
+  {
+    "department_code": "22",
+    "department_name": "Nuclear Science and Engineering"
+  },
+  { "department_code": "24", "department_name": "Linguistics and Philosophy" },
+  { "department_code": "AS", "department_name": "Aerospace Studies" },
+  { "department_code": "CC", "department_name": "Concourse Program" },
+  { "department_code": "CMS", "department_name": "Comparative Media Studies" },
+  {
+    "department_code": "CSB",
+    "department_name": "Computational and Systems Biology"
+  },
+  {
+    "department_code": "CSE",
+    "department_name": "Center for Computational Science and Engineering"
+  },
+  { "department_code": "CDO", "department_name": "Chief Digital Officer" },
+  { "department_code": "EC", "department_name": "Edgerton Center" },
+  { "department_code": "EM", "department_name": "Engineering Management" },
+  { "department_code": "ES", "department_name": "Experimental Study Group" },
+  {
+    "department_code": "HST",
+    "department_name": "Health Sciences and Technology"
+  },
+  {
+    "department_code": "IDS",
+    "department_name": "Institute for Data, Systems and Society"
+  },
+  { "department_code": "MAS", "department_name": "Media Arts and Sciences" },
+  { "department_code": "MS", "department_name": "Military Science" },
+  { "department_code": "NS", "department_name": "Naval Science" },
+  { "department_code": "SCM", "department_name": "Supply Chain Management" },
+  { "department_code": "SP", "department_name": "Special Program" },
+  {
+    "department_code": "STS",
+    "department_name": "Science, Technology, and Society"
+  },
+  { "department_code": "WGS", "department_name": "Women's and Gender Studies" }
+]
