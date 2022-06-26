@@ -76,11 +76,20 @@ def combine_json_obj(og_obj, add_obj, attr=None):
 
 
 def create_json_file(json_obj, file_name):
-
     with open(file_name, "w+") as file:
         json.dump(json_obj, file, indent=2)
 
 
+def add_prereq_to_attribute(nodes, links):
+    for obj in nodes:
+        obj["prereq_of"] = []
+        
+    for link in links: 
+        for i in range(len(nodes)):
+            if link["prereq_code"] == nodes[i]["course_code"]:
+                nodes[i]["prereq_of"].append(link["course_code"])
+                                    
+                    
 def main():
     """
     Combines nodes.json and gir_nodes.json and creates all_nodes.json
@@ -91,20 +100,18 @@ def main():
     gir_nodes_file = "./website/data/gir_nodes.json"
     links_file = "./website/data/links.json"
 
-    all_nodes_file = "./website/data/test_all_nodes.json"
-    output_file = "./website/data/data.json"
-
     all_nodes_obj = combine_json_obj(
         get_json_obj(nodes_file), get_json_obj(gir_nodes_file)
     )
+    
+    add_prereq_to_attribute(all_nodes_obj, get_json_obj(links_file))
 
     data = combine_json_obj(
         name_json_array(all_nodes_obj, "nodes"),
         name_json_array(get_json_obj(links_file), "links"),
     )
 
-    create_json_file(all_nodes_obj, all_nodes_file)
-    create_json_file(data, output_file)
-
+    create_json_file(all_nodes_obj, "./website/data/all_nodes.json")
+    create_json_file(data, "./website/data/data.json")
 
 main()
